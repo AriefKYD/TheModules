@@ -24,7 +24,16 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     {
         public float damage;
         public float fireRate;
+        public float bulletSpeed;
         public int magazine;
         public int maxAmmo;
+        public Sprite s_bullet;
+        public Bullet prefabsBullet;
+    }
+
+
+    public interface IDamageable
+    {
+        public void Damaged(float _amount);
     }
 }

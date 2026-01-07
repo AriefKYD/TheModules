@@ -8,12 +8,30 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     public class SO_AutoShot : SO_BaseWeapon
     {
         public bool canReload = true;
+        float _currentDelay;
+        Bullet _cachedBullet;
         public override void Attack()
         {
-            if (Input.GetMouseButton(0))
-                Debug.Log("Auto Shot");
+            if (_currentDelay <= 0)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    _currentDelay = weaponStat.fireRate;
+                    Debug.Log("Auto Shot");
+                    _cachedBullet = BulletManager.Instance.GetBullet(weaponStat.prefabsBullet);
+                    if (_cachedBullet != null)
+                    {
+                        _cachedBullet.transform.position = Controller.T_weaponTip.position;
+                        _cachedBullet.transform.localRotation = Controller.T_weaponPivot.localRotation;
+                        _cachedBullet.Shot(weaponStat);
+                    }
+                }
+            }
             if (Input.GetKeyDown(KeyCode.R))
                 Reload();
+
+
+            _currentDelay -= Time.deltaTime;
         }
 
         public override void Reload()

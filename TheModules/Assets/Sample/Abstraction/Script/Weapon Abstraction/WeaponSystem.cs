@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using FallenWing.Core;
+using System.Collections.Generic;
+using FallenWing.Module.ObjectPooler;
 
 namespace FallenWing.Example.Abstraction.WeaponSystemSO
 {
@@ -8,22 +11,29 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     public class WeaponSystem : MonoBehaviour
     {
         public SO_BaseWeapon currentWeapon;
+        [SerializeField] SO_BaseWeapon[] weaponList;
+        [SerializeField] private Transform t_weaponPivot,t_weaponTip;
         [SerializeField] private SpriteRenderer s_weaponSprite;
+
+        public Transform T_weaponPivot { get => t_weaponPivot; }
+        public Transform T_weaponTip { get => t_weaponTip;  }
+
         private void Awake()
         {
             currentWeapon.Controller = this;
         }
         public void Attack()
         {
-
             if (currentWeapon)
                 currentWeapon.Attack();
         }
 
-        public void SwapWeapon(SO_BaseWeapon _weapon)
+        public void SwapWeapon(int _val)
         {
-            currentWeapon = _weapon;
+            currentWeapon = weaponList[_val];
+            currentWeapon.Controller = this;
             s_weaponSprite.sprite = currentWeapon.s_weapon;
         }
     }
+
 }

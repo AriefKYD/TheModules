@@ -94,7 +94,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Next"",
                     ""type"": ""Button"",
                     ""id"": ""b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -104,6 +104,42 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""641cd816-40e6-41b4-8c3d-04687c349290"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WpSlot1"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fbd3dc5-cb16-44d1-bf8d-2e34c982144e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WpSlot2"",
+                    ""type"": ""Button"",
+                    ""id"": ""a944593c-85eb-4dae-a4d5-d81b63431286"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WpSlot3"",
+                    ""type"": ""Button"",
+                    ""id"": ""24450b06-06e4-41cd-a6bd-aadfd93e4a90"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WpSlot4"",
+                    ""type"": ""Button"",
+                    ""id"": ""60859d5e-2a80-47cf-91f9-cc2bf9c2fa06"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -492,6 +528,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7a85ebc-95bb-479f-a3e1-888a9cd1eaea"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WpSlot1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7ee5e3f-2266-4da9-9eb6-eb44b435ad2f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WpSlot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e239c601-c707-4f4a-b4a6-91ef00d5d665"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WpSlot3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08d0e0e5-2109-4896-8e78-5882ee159df6"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WpSlot4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1088,6 +1168,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_WpSlot1 = m_Player.FindAction("WpSlot1", throwIfNotFound: true);
+        m_Player_WpSlot2 = m_Player.FindAction("WpSlot2", throwIfNotFound: true);
+        m_Player_WpSlot3 = m_Player.FindAction("WpSlot3", throwIfNotFound: true);
+        m_Player_WpSlot4 = m_Player.FindAction("WpSlot4", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1176,6 +1260,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_WpSlot1;
+    private readonly InputAction m_Player_WpSlot2;
+    private readonly InputAction m_Player_WpSlot3;
+    private readonly InputAction m_Player_WpSlot4;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1189,6 +1277,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Previous => m_Wrapper.m_Player_Previous;
         public InputAction @Next => m_Wrapper.m_Player_Next;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @WpSlot1 => m_Wrapper.m_Player_WpSlot1;
+        public InputAction @WpSlot2 => m_Wrapper.m_Player_WpSlot2;
+        public InputAction @WpSlot3 => m_Wrapper.m_Player_WpSlot3;
+        public InputAction @WpSlot4 => m_Wrapper.m_Player_WpSlot4;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1225,6 +1317,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @WpSlot1.started += instance.OnWpSlot1;
+            @WpSlot1.performed += instance.OnWpSlot1;
+            @WpSlot1.canceled += instance.OnWpSlot1;
+            @WpSlot2.started += instance.OnWpSlot2;
+            @WpSlot2.performed += instance.OnWpSlot2;
+            @WpSlot2.canceled += instance.OnWpSlot2;
+            @WpSlot3.started += instance.OnWpSlot3;
+            @WpSlot3.performed += instance.OnWpSlot3;
+            @WpSlot3.canceled += instance.OnWpSlot3;
+            @WpSlot4.started += instance.OnWpSlot4;
+            @WpSlot4.performed += instance.OnWpSlot4;
+            @WpSlot4.canceled += instance.OnWpSlot4;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1256,6 +1360,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @WpSlot1.started -= instance.OnWpSlot1;
+            @WpSlot1.performed -= instance.OnWpSlot1;
+            @WpSlot1.canceled -= instance.OnWpSlot1;
+            @WpSlot2.started -= instance.OnWpSlot2;
+            @WpSlot2.performed -= instance.OnWpSlot2;
+            @WpSlot2.canceled -= instance.OnWpSlot2;
+            @WpSlot3.started -= instance.OnWpSlot3;
+            @WpSlot3.performed -= instance.OnWpSlot3;
+            @WpSlot3.canceled -= instance.OnWpSlot3;
+            @WpSlot4.started -= instance.OnWpSlot4;
+            @WpSlot4.performed -= instance.OnWpSlot4;
+            @WpSlot4.canceled -= instance.OnWpSlot4;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1447,6 +1563,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnPrevious(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnWpSlot1(InputAction.CallbackContext context);
+        void OnWpSlot2(InputAction.CallbackContext context);
+        void OnWpSlot3(InputAction.CallbackContext context);
+        void OnWpSlot4(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

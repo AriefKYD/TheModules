@@ -15,6 +15,9 @@ MonoBehaviour:
   s_weapon: {fileID: -353751291, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
   weaponStat:
     damage: 0
-    fireRate: 0
+    fireRate: 0.5
+    bulletSpeed: 35
     magazine: 0
     maxAmmo: 0
+    s_bullet: {fileID: -537537479, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    prefabsBullet: {fileID: 7259582564796298864, guid: 25f095d1367774e48aa932fcc8559b69, type: 3}

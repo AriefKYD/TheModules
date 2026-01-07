@@ -1,12 +1,14 @@
 using UnityEngine;
 using FallenWing.Module.PlayerController;
 using UnityEngine.Windows;
+using FallenWing.Example.Abstraction.WeaponSystemSO;
 namespace FallenWing.Example.Abstraction
 {
     public class PlayerController_WeaponAbs : BasePlayerController
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private AimMouse aimMethod;
+        [SerializeField] private WeaponSystem weaponSystem;
         private SpriteRenderer s_renderer;
         private Animator animator;
         private Vector3 direction;
@@ -23,6 +25,33 @@ namespace FallenWing.Example.Abstraction
             Movement();
             Flip();
             aimMethod.Aim();
+            WeaponSystemUpdate();
+        }
+
+        private void WeaponSystemUpdate()
+        {
+            //Swap Controll
+            if (InputActions.Player.WpSlot1.WasPressedThisFrame())
+            {
+                weaponSystem.SwapWeapon(0);
+            }
+            if (InputActions.Player.WpSlot2.WasPressedThisFrame())
+            {
+                weaponSystem.SwapWeapon(1);
+            }
+            if (InputActions.Player.WpSlot3.WasPressedThisFrame())
+            {
+
+                weaponSystem.SwapWeapon(2);
+            }
+            if (InputActions.Player.WpSlot4.WasPressedThisFrame())
+            {
+
+                weaponSystem.SwapWeapon(3);
+            }
+            //Shot Controll
+            weaponSystem.Attack();
+
         }
 
         public override void Movement()
@@ -38,4 +67,5 @@ namespace FallenWing.Example.Abstraction
         }
      
     }
+    
 }

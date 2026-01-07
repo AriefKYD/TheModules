@@ -5,6 +5,7 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     public class SO_Melee : SO_BaseWeapon
     {
         float _currentDelay;
+        Bullet _cachedBullet;
         public override void Attack()
         {
 
@@ -14,6 +15,14 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
                 {
                     _currentDelay = weaponStat.fireRate;
                     Debug.Log($"Melee {name} With {weaponStat.damage}");
+                    _cachedBullet= BulletManager.Instance.GetBullet(weaponStat.prefabsBullet);
+                    if (_cachedBullet != null)
+                    {
+                        _cachedBullet.transform.position = Controller.T_weaponTip.position;
+                        _cachedBullet.transform.localRotation = Controller.T_weaponPivot.localRotation;
+                        _cachedBullet.Shot(weaponStat);
+                    }
+
                 }
             }
             _currentDelay -= Time.deltaTime;
