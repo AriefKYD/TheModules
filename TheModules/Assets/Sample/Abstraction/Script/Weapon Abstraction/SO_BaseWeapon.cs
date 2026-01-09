@@ -15,6 +15,8 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
         public WeaponSystem Controller { get; set; }
 
         public WeaponStat weaponStat;
+
+        public abstract bool CanAttack();
         public abstract void Attack();
         public abstract void Reload();
     }

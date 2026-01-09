@@ -22,10 +22,11 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
         {
             currentWeapon.Controller = this;
         }
-        public void Attack()
+        public void Shot()
         {
             if (currentWeapon)
-                currentWeapon.Attack();
+                if (currentWeapon.CanAttack())
+                    currentWeapon.Attack();
         }
 
         public void SwapWeapon(int _val)

@@ -50,7 +50,7 @@ namespace FallenWing.Example.Abstraction
                 weaponSystem.SwapWeapon(3);
             }
             //Shot Controll
-            weaponSystem.Attack();
+            weaponSystem.Shot();
 
         }
 
