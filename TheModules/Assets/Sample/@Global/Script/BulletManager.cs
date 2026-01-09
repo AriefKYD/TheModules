@@ -1,8 +1,9 @@
 ﻿using FallenWing.Core;
 using System.Collections.Generic;
+using FallenWing.Example.Global;
 using FallenWing.Module.ObjectPooler;
 
-namespace FallenWing.Example.Abstraction.WeaponSystemSO
+namespace FallenWing.Example.Global
 {
     public class BulletManager : BaseSingleton<BulletManager> 
     {

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using FallenWing.Example.Abstraction.WeaponSystemSO;
 using FallenWing.Module.ObjectPooler;
 
-namespace FallenWing.Example.Abstraction.WeaponSystemSO
+namespace FallenWing.Example.Global
 {
     public class Bullet : MonoBehaviour,IPoolableObject
     {

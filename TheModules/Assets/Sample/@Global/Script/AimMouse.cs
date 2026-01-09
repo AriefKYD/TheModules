@@ -1,6 +1,6 @@
 ﻿using FallenWing.Example.Abstraction.WeaponSystemSO;
 using UnityEngine;
-namespace FallenWing.Example.Abstraction
+namespace FallenWing.Example.Global
 {
     public class AimMouse : MonoBehaviour
     {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using FallenWing.Example.Global;
 
 namespace FallenWing.Example.Abstraction.WeaponSystemSO
 {

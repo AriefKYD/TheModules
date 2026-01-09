@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using FallenWing.Core;
 using System.Collections.Generic;
-using FallenWing.Module.ObjectPooler;
+using FallenWing.Example.Abstraction.WeaponSystemSO;
 
-namespace FallenWing.Example.Abstraction.WeaponSystemSO
+namespace FallenWing.Example.Global
 {
     /// <summary>
     /// Place this to any weapon and swap the weapon with Scriptable Object

@@ -2,9 +2,9 @@ using UnityEngine;
 using FallenWing.Module.PlayerController;
 using UnityEngine.Windows;
 using FallenWing.Example.Abstraction.WeaponSystemSO;
-namespace FallenWing.Example.Abstraction
+namespace FallenWing.Example.Global
 {
-    public class PlayerController_WeaponAbs : BasePlayerController
+    public class PlayerController : BasePlayerController
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private AimMouse aimMethod;

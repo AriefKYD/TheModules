@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using FallenWing.Example.Global;
 namespace FallenWing.Example.Abstraction.WeaponSystemSO
 {
     [CreateAssetMenu(fileName = "SO_Spread Shot Weapon", menuName = "SO/Weapon Type/Spread")]
