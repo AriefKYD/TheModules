@@ -33,7 +33,13 @@ namespace FallenWing.Example.Global
         {
             currentWeapon = weaponList[_val];
             currentWeapon.Controller = this;
-            s_weaponSprite.sprite = currentWeapon.s_weapon;
+            s_weaponSprite.sprite = currentWeapon.weaponStat.s_weapon;
+        }
+        public void SwapWeapon(SO_BaseWeapon _val)
+        {
+            currentWeapon = _val;
+            currentWeapon.Controller = this;
+            s_weaponSprite.sprite = currentWeapon.weaponStat.s_weapon;
         }
     }
 

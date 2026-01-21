@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace FallenWing.Example.ObjectPoolerSample
+namespace FallenWing.Example.Global
 {
-    using FallenWing.Example.Global;
+    using FallenWing.Example.Abstraction.WeaponSystemSO;
     using FallenWing.Module.PlayerController;
     public class PlayerController : BasePlayerController
     {
@@ -48,6 +48,10 @@ namespace FallenWing.Example.ObjectPoolerSample
             s_renderer.flipX = LastDirection < 0;
         }
 
+        public void SwapWeapon(SO_BaseWeapon weaponStat)
+        {
+            weaponSystem.SwapWeapon(weaponStat);
+        }
     }
 
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 using FallenWing.Module.PlayerController;
 using UnityEngine.Windows;
-using FallenWing.Example.Abstraction.WeaponSystemSO;
-namespace FallenWing.Example.Global
+using FallenWing.Example.Global;
+namespace FallenWing.Example.Abstraction
 {
     public class PlayerController : BasePlayerController
     {

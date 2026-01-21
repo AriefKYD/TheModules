@@ -12,7 +12,6 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     /// </summary>
     public abstract class SO_BaseWeapon : ScriptableObject
     {
-        public Sprite s_weapon;
         public WeaponSystem Controller { get; set; }
 
         public WeaponStat weaponStat;
@@ -25,6 +24,7 @@ namespace FallenWing.Example.Abstraction.WeaponSystemSO
     [System.Serializable]
     public struct WeaponStat
     {
+        public Sprite s_weapon;
         public float damage;
         public float fireRate;
         public float bulletSpeed;

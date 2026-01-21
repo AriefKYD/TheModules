@@ -22,7 +22,7 @@ namespace FallenWing.Module.PlayerController
         {
             InputActions = new InputSystem_Actions();
         }
-        private void OnEnable()
+        public virtual void OnEnable()
         {
             InputActions.Player.Move.performed += Move_performed;
             InputActions.Player.Move.canceled += Move_canceled;
@@ -30,7 +30,7 @@ namespace FallenWing.Module.PlayerController
         }
 
 
-        private void OnDisable()
+        public virtual void OnDisable()
         {
             InputActions.Player.Move.performed -= Move_performed;
             InputActions.Player.Move.canceled -= Move_canceled;
